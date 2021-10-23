@@ -1,17 +1,6 @@
 # GRCh38 collapsed duplications identification
 
-Goal: To identify problematic regions in GRCh38, specially those associated with missing or collapsed gene copies, that are fixed in T2T's CHM13 reference.
-
-Approach: Problematic regions will be identified as regions were variant callin is off, meaning where heterozygous variants are called in biologically haploid cell lines.
-
-- Aim 1: Identify regions with problematic variant calls in GRCh38 and T2T
-- Aim 2: Compare references and overlay with other signals.
-- Aim 3: Establish possible causes for the problematic calls.
-- Aim 4: Assay the impact of these problematic calls in genes and gene function.
-
-- Look at copy number of these regions in population samples - Evan's CN
-- GIAB’s excluded sites | Gnomad's exlcuded sites
-- Vollger divergent sites
+This repository describes the identification of problematic regions in GRCh38 associated with missing or collapsed gene copies.
 
 ## 1. Variant calling
 
