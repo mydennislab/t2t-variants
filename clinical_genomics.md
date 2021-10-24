@@ -298,7 +298,7 @@ df4 <- full_join(df2, df3, by = c("pos_hg38_kcnj18" = "pos_hg38_kcnj17"))
 write.table(df4, "kcnj18_17.tsv", quote=FALSE, row.names=FALSE, col.names=TRUE)
 ```
 
-#### 3.4.3 KCNJ12/17
+### 3.3 KCNJ12/17
 
 KCNJ12:
 - KCNJ12_Hg38: chr17:21415343-21416644
