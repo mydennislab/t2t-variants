@@ -110,7 +110,7 @@ globus transfer 9db1f0a6-a05a-11ea-8f06-0a21f750d19b:team-variants/read_aligns/b
 globus transfer 9db1f0a6-a05a-11ea-8f06-0a21f750d19b:team-variants/read_aligns/bams/chm13_v1.0_simReads_to_hg38/chm13_v1.0_simReadsTohg38.bam.bai $(globus endpoint local-id):/share/dennislab/users/dcsoto/other/globus_connect/chm13_v1.0_simReadsTohg38.bam.bai
 ```
 
-### 1.3.1. SimReads from T2T-CHM13 vs GRCh38
+#### 1.3.1. SimReads from T2T-CHM13 vs GRCh38
 
 Filtering alignments:
 ```bash
@@ -127,7 +127,7 @@ module load gatk/4.1.8.1
 gatk HaplotypeCaller --minimum-mapping-quality 30 -ploidy 2 -R ../references/hg38.noalt.fa -I chm13_v1.0_simReadsTohg38.rg.no_alt.bam -O chm13_v1.0_simReadsTohg38.rg.no_alt.gatk_30.vcf
 ```
 
-### 1.3.2 SimReads from T2T-CHM13 vs T2T-CHM13
+#### 1.3.2 SimReads from T2T-CHM13 vs T2T-CHM13
 
 Mapping and variant calling to T2T:
 ```bash
