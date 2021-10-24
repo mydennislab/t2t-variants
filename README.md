@@ -4,4 +4,4 @@ Code associated with "A complete reference genome improves analysis of human gen
 
 This repository contains code used to obtain collapsed duplications in GRCh38 and T2T-CHM13v1,0, and impact of collapsed duplication on clinical genomics.
 
-Additionally, "ideogram" folder contains code used to generate Fig1A and B.
+Additionally, "ideogram" folder contains code used to generate Fig. 1A and 1B.
