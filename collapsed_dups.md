@@ -801,8 +801,7 @@ awk 'BEGIN{OFS="\t"}{if($7>0){print $1,$2,$3"\tNon-syntenic"}else{print $1,$2,$3
 /software/R/4.0.1/lssc0-linux/bin/Rscript ~/scripts/collapse_bed.R /dev/stdin CHM13_coords.v2.ns_wm.bed
 ```
 
-#### 2.9.6 
-heterozygosity (T2T)
+#### 2.9.6 Excess heterozygosity (T2T)
 
 ```bash
 cd /share/dennislab/projects/t2t/variants/analysis/inbreeding
