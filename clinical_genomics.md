@@ -1,8 +1,8 @@
 # Impact of T2T-CHM13 in clinical genomics
 
-### 3.1 Additional analyses
+## 1. Additional analyses
 
-#### 3.1.1 CHM13 DipCall
+### 1.1 CHM13 DipCall
 
 ```bash
 cd /share/dennislab/projects/t2t/variants/dipcall
@@ -37,7 +37,7 @@ Annotating CHM13 dipcall to Hg38 variants with 1kgp AF:
 join -1 1 -2 1 -t $'\t' <(sort -k1,1 chm13_dipcall_vep_toHg38.tsv) <(sort -k1,1 1kgp_variants_toHg38.tsv) > chm13_dipcall_vep_toHg38.1kgp_af.tsv
 ```
 
-#### 3.1.2 1KGP AF=1
+### 1.2 1KGP AF=1
 
 ```bash
 cd /share/dennislab/projects/t2t/variants/af_1/grch38_af_1
@@ -72,7 +72,7 @@ gunzip -c chm13_af_1/1kgp.all.recalibrated.snp_indel.pass.singleton.af_1.vcf.gz 
 bcftools view --exclude-types indels chm13_af_1/1kgp.all.recalibrated.snp_indel.pass.singleton.af_1.vcf.gz | grep -v "^#" | wc -l # 9880 SNVs
 ```
 
-### 3.2 Med genes impacted
+## 2. Med genes impacted
 
 ```bash
 cd /share/dennislab/projects/t2t/med_genes
@@ -165,13 +165,13 @@ bedtools intersect -wo -a GRCh38_mrg_full_gene.bed -b /share/dennislab/projects/
 cut -f4,10,11 grc_issues/GRCh38_mrg_full_gene.annotated_grc_issues.bed | awk '{print $1"\t"$2";"$3}' | sort | uniq > grc_issues/grc_issues.hg38.txt
 ```
 
-### 3.3 KCNJ18 and KCNE1 close-up
+## 3. KCNJ18 and KCNE1 close-up
 
 ```bash
 cd /share/dennislab/projects/t2t/variants/analysis/kcnj18/
 ```
 
-#### 3.4.1 1KGP variant files
+### 3.1 1KGP variant files
 
 ```bash
 cd /share/dennislab/projects/t2t/variants/analysis/kcnj18/variants_1kgp
@@ -190,7 +190,7 @@ vcf-concat 1kgp.chr10.recalibrated.snp_indel.pass.nogenos.labeled.vcf.gz 1kgp.ch
 - CHM13-called variants: `/share/dennislab/projects/t2t/variants/analysis/kcnj18/variants_1kgp/1kgp.all.recalibrated.snp_indel.pass.nogenos.labeled.sort.vcf.gz`
 - Lifted variants: `/share/dennislab/projects/t2t/variants/analysis/kcnj18/variants_1kgp/1kgp.allvars.recalibrated.snp_indel.pass.nogenos.labeled.grch38.sort.vcf.gz`
 
-#### 3.4.2 KCNJ18/17
+### 3.2 KCNJ18/17
 
 ```bash
 cd /share/dennislab/projects/t2t/variants/analysis/kcnj18/kcnj18_17
@@ -380,7 +380,7 @@ df4 <- full_join(df2, df3, by = c("pos_hg38_kcnj12" = "pos_hg38_kcnj17"))
 write.table(df4, "kcnj12_17.tsv", quote=FALSE, row.names=FALSE, col.names=TRUE)
 ```
 
-#### 3.4.4 KCNJ18/17/12 SFS
+### 3.4 KCNJ18/17/12 SFS
 
 ```bash
 cd /share/dennislab/projects/t2t/variants/analysis/kcnj18/sfs
@@ -434,7 +434,7 @@ ggplot(data, aes(AF, color=ref, fill=ref)) +
 ggsave("KCNJ18_12_17.SFS.pdf", width=9, height=3)
 ```
 
-#### 3.4.4 HG002 variants
+### 3.4 HG002 variants
 
 **Illumina variants**
 
