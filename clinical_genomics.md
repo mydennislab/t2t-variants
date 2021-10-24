@@ -434,7 +434,7 @@ ggplot(data, aes(AF, color=ref, fill=ref)) +
 ggsave("KCNJ18_12_17.SFS.pdf", width=9, height=3)
 ```
 
-### 3.4 HG002 variants
+### 3.5 HG002 variants
 
 **Illumina variants**
 
