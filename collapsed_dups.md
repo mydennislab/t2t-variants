@@ -824,12 +824,11 @@ cd /share/dennislab/projects/t2t/variants/analysis/ideogram
 Bases impacted:
 ```bash
 awk '{sum+=$3-$2}END{print sum}' hg38_cluster_hets.bed # 20821000
-awk '{sum+=$3-$2}END{print sum}' hg38_cluster_hets.bed # 20821000
 ```
 
 Genes impacted:
 ```bash
-bedtools intersect -wo -a <(cut -d";" -f1 /share/dennislab/projects/t2t/variants/analysis/genes/gencode.v35.annotation.genesOnly.bed) -b hg38_cluster_hets.bed | cut -f4 | sort | uniq | wc -l # 987
+bedtools intersect -wo -a <(cut -d";" -f1 /share/dennislab/projects/t2t/variants/analysis/genes/gencode.v35.annotation.genesOnly.bed) -b hg38_cluster_hets.bed |  grep -v "chrY" | cut -f4 | sort | uniq | wc -l # 987
 
 bedtools intersect -wo -a <(cut -d";" -f1 /share/dennislab/projects/t2t/variants/analysis/genes/CHM13.combined.v4.genesOnly.bed) -b chm13_cluster_hets.bed | cut -f4 | sort | uniq | wc -l # 430
 ```
