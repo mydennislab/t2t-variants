@@ -301,9 +301,9 @@ bcftools isec -p isec_output -Ov ../hets/merged.het_snps.vcf.gz gnomad.genomes.r
 for file in isec_output/*vcf; do grep -v "^#" $file | wc -l ; done
 ```
 
-- Private to merged.het_snps.vcf.gz: 288891
-- Private to gnomad.genomes.r3.0.sites.InbreedingCoeff.snps.vcf.gz: 205460
-- Shared records: 87877
+- Private to merged.het_snps.vcf.gz: 288891 (without Y: 281569)
+- Private to gnomad.genomes.r3.0.sites.InbreedingCoeff.snps.vcf.gz: 205460 (without Y: 201487)
+- Shared records: 87877 (without Y: 87005)
 - 23.32% of variants are flagged with excess of heterozygosity
 
 We repeated the analysis using variants identified by both platforms only:
@@ -512,7 +512,8 @@ ls /share/dennislab/projects/t2t/wssd/hgdp_complete/*.bed | cut -d"/" -f8 | cut 
 cat samples.txt | xargs -n1 -P20 bash -c 'cut -f1-3,10 /share/dennislab/projects/t2t/wssd/hgdp_complete/$0.bed > input/$0.CN.bed'
 ```
 
-From this dataset, we found that sample `LP6005442-DNA_A08_wssd.CN.bed` had strange copy numbers compared to the rest of the samples, so we removed it from input directory.
+From this dataset, we found that sample `LP6005442-DNA_A08_wssd.CN.bed` had strange copy numbers compared to the rest of the samples, so we removed it from input 
+ory.
 
 **Genotyping**
 
@@ -800,7 +801,8 @@ awk 'BEGIN{OFS="\t"}{if($7>0){print $1,$2,$3"\tNon-syntenic"}else{print $1,$2,$3
 /software/R/4.0.1/lssc0-linux/bin/Rscript ~/scripts/collapse_bed.R /dev/stdin CHM13_coords.v2.ns_wm.bed
 ```
 
-#### 2.9.6 Excess heterozygosity (T2T)
+#### 2.9.6 
+heterozygosity (T2T)
 
 ```bash
 cd /share/dennislab/projects/t2t/variants/analysis/inbreeding
